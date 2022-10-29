@@ -8,9 +8,11 @@ import reduxStore from './redux/redux_store';
 
 import RTKDemo from './pages/RTKDemo';
 import store from './reduxToolkit/store';
+import TestRTK from './pages/TestRTK';
 
 import UnstatedNextDemo from './pages/UnstatedNextDemo';
-import { UnStateNextStore } from './pages/UnstatedNextDemo';
+import UnStateNextStore from './unstatedNext/useApp';
+import TestHook from './pages/TestHook';
 
 import styles from './index.module.less';
 
@@ -33,14 +35,18 @@ root.render(
   <div className={styles.container}>
     <Provider store={store}>
       <RTKDemo/>
+      <TestRTK/>
       <ExpensiveComponent props='1'/>
     </Provider>
+
     <Provider store={reduxStore}>
       <ReduxDemo/>
       <ExpensiveComponent props='2'/>
     </Provider>
+    
     <UnStateNextStore.Provider >
       <UnstatedNextDemo/>
+      <TestHook/>
       <ExpensiveComponent props='3'/>
     </UnStateNextStore.Provider>
   </div>

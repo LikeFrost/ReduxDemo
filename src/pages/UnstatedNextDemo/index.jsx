@@ -1,10 +1,7 @@
 import React from 'react';
 import { Button } from 'antd';
-import { createContainer } from 'unstated-next';
-import useApp from '../../unstatedNext/useApp';
+import UnStateNextStore from '../../unstatedNext/useApp';
 import styles from './index.module.less';
-
-const UnStateNextStore = createContainer(useApp);
 
 function UnstatedNextDemo() {
   const menu = UnStateNextStore.useContainer();
@@ -26,4 +23,3 @@ function UnstatedNextDemo() {
 }
 
 export default UnstatedNextDemo;
-export { UnStateNextStore };
