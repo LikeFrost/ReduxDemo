@@ -4,7 +4,8 @@ import menuService from '../../service/menu';
 export const getMenu = createAsyncThunk(
     "menu/getMenu",
     async () =>{
-        return await menuService.getMenu();
+        const res =  await menuService.getMenu();
+        return res.data;
     }
 )
 
@@ -31,7 +32,7 @@ export const menuSlice = createSlice({
     //异步actions
     extraReducers:(builder)=>{
         builder.addCase(getMenu.fulfilled,(state,action)=>{
-            state.menuList = action.payload.data.data.data;
+            state.menuList = action.payload.data.data;
         })
     }
 })

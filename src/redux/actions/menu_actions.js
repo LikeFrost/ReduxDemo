@@ -6,7 +6,7 @@ export const updateMenu = data => ({type: 'UPDATE', data});
 
 //异步action
 export const fetchMenu = () =>{
-    return async(dispatch,getState) =>{
+    return async(dispatch, getState) =>{
         const data = await menuService.getMenu();
         dispatch(updateMenu(data.data.data.data));
     }
